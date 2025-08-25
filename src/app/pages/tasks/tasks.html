@@ -6,10 +6,8 @@
     <app-searchbar (onSearch)="handleSearch($event)" />
     <app-search-filters (onFilterChange)="handleFilterChange($event)" (onSortChange)="handleSortChange($event)" />
     <app-task-list [tasks]="tasks()" />
-
-    <p>{{nextPage()}}</p>
     @if (nextPage()) {
-      <button (click)="getMoreTasks()">
+      <button class="view-more-btn" (click)="getMoreTasks()">
         More
       </button>
     }
