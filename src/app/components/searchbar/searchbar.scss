@@ -1,0 +1,36 @@
+@import 'responsive';
+
+.search-container {
+    /* Mimicking an SCSS parent selector */
+    display: flex;
+    max-width: 600px;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+
+    /* SCSS nesting for a clean, logical structure */
+    .search-input {
+        flex-grow: 1;
+        /* Allows the input to take up available space */
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 90px;
+        margin-right: 0.5rem;
+    }
+
+    .search-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        background-color: #007bff; 
+        color: white;
+        border: none;
+        border-radius: 90px;
+        cursor: pointer;
+
+        &:hover {
+            background-color:  #0056b3; /* Darkens the primary color on hover */
+            /* Darkens the primary color on hover */
+        }
+    }
+}

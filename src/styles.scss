@@ -1,1 +1,123 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Define font config
+$font-family: 'Roboto', sans-serif;
+$font-size: 16px;
+$font-weight: 400;
+$line-height: 24px;
+$letter-spacing: 0.5px;
+
+body, * {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+// Define color variables for light and dark themes
+
+$themed-background: #f9f9f9;
+$themed-surface: #ffffff;
+$themed-on-surface: #333333;
+$themed-border: #e0e0e0;
+$themed-hover-background: #f0f0f0;
+$themed-hover-border: #bbb;
+
+$themed-background-dark: #121212;
+$themed-surface-dark: #1e1e1e;
+$themed-on-surface-dark: #e0e0e0;
+$themed-border-dark: #333333;
+$themed-hover-background-dark: #2c2c2c;
+$themed-hover-border-dark: #555;
+
+body {
+  .themed-bg {
+    background-color: $themed-background;
+    color: $themed-on-surface;
+  }
+
+  .themed-surface {
+    background-color: $themed-surface;
+    color: $themed-on-surface;
+  }
+
+  .themed-surface-item {
+    background-color: $themed-surface;
+    color: $themed-on-surface;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: $themed-hover-background;
+      border-color: $themed-hover-border;
+      cursor: pointer;
+    }
+  }
+
+  &.dark {
+    .themed-bg {
+      background-color: $themed-background-dark;
+      color: $themed-on-surface-dark;
+    }
+
+    .themed-surface {
+      background-color: $themed-surface-dark;
+      color: $themed-on-surface-dark;
+    }
+
+    .themed-surface-item {
+      background-color: $themed-surface-dark;
+      color: $themed-on-surface-dark;
+      border-radius: 8px;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: $themed-hover-background-dark;
+        border-color: $themed-hover-border-dark;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+html {
+  @include mat.theme((color: (primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+
 /* You can add global styles to this file, and also import other style files */
+
+.page {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+}

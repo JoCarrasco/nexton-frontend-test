@@ -1,0 +1,37 @@
+
+// --- Primary Colors ---
+// Used for main interactive elements, branding, and key calls-to-action.
+$primary: #3498db; // A nice blue
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 10%);
+
+// --- Secondary Colors ---
+// Used for secondary actions, accents, and less prominent elements.
+$secondary: #9b59b6; // A rich purple
+$secondary-light: lighten($secondary, 10%);
+$secondary-dark: darken($secondary, 10%);
+
+// --- Status Colors ---
+// Used to convey specific states (success, danger, warning, etc.).
+
+// Success: for positive actions or confirmations.
+$success: #2ecc71; // A vibrant green
+$success-light: lighten($success, 10%);
+$success-dark: darken($success, 10%);
+
+// Danger: for destructive actions or critical errors.
+$danger: #e74c3c; // A strong red
+$danger-light: lighten($danger, 10%);
+$danger-dark: darken($danger, 10%);
+
+// Alert/Warning: for warnings or non-critical issues.
+$alert: #f1c40f; // A bright yellow
+$alert-light: lighten($alert, 10%);
+$alert-dark: darken($alert, 10%);
+
+// --- Neutral/Other Colors ---
+// Used for text, backgrounds, and borders to provide structure.
+$neutral-light: #ecf0f1; // Off-white for light backgrounds
+$neutral-medium: #bdc3c7; // Medium gray for borders or secondary text
+$neutral-dark: #34495e; // Dark gray for headings or main text
+$white: #fff;

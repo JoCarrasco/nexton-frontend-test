@@ -1,0 +1,23 @@
+<div class="task-list">
+
+    @if (tasks() === undefined) {
+        <div class="message-card">
+            <p>No tasks found.</p>
+        </div>
+    } @else if (tasks()?.length === 0) {
+        <div class="message-card">
+            <p>No tasks found.</p>
+        </div>
+    } @else {
+        <!-- @let taskLength = tasks()?.length;
+        <div class="task-list-header">
+            <span class="task-list-title">Tasks</span>
+            <span class="task-count">{{ taskLength }} tasks</span>
+        </div> -->
+        <div class="task-list-content themed-bg">
+            @for (task of tasks(); track $index) {
+            <app-task [task]="task" />
+            }
+        </div>
+    }
+</div>

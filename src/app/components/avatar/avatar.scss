@@ -1,0 +1,23 @@
+.nexton-avatar {
+    border-radius: 50%; // Makes the avatar circular.
+    object-fit: cover; // Ensures the image covers the entire area without distortion.
+    display: block; // Ensures it behaves like a block element, preventing inline spacing issues.
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Adds a subtle shadow for depth.
+    &.xsmall {
+        width: 24px; // Smaller size for small avatars.
+        height: 24px; // Smaller size for small avatars.
+    }
+    &.small {
+        width: 32px; // Smaller size for small avatars.
+        height: 32px; // Smaller size for small avatars.
+    }
+    &.medium {
+        width: 40px; // Medium size for medium avatars.
+        height: 40px; // Medium size for medium avatars.
+    }
+    &.large {
+        width: 48px; // Larger size for large avatars.
+        height: 48px; // Larger size for large avatars.
+    }
+}

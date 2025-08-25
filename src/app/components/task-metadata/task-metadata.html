@@ -1,0 +1,10 @@
+  <div class="task-metadata">
+    <div class="task-asignee">
+        <app-avatar size="xsmall" [imgUrl]="taskMetadata()?.assignee?.avatarUrl" [imgAlt]="taskMetadata()?.assignee?.name" />
+        <span class="task-assignee-name">{{ taskMetadata()?.assignee?.name }}</span>
+    </div>
+    <div class="task-due-date">
+        <span class="task-status-label">Due Date</span>
+        <span class="task-due-date-value">{{ (taskMetadata()?.dueDate | date) || 'No due date' }}</span>
+    </div>
+  </div>

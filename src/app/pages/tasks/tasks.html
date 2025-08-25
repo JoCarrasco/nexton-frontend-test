@@ -1,0 +1,17 @@
+<div class="page">
+  <div class="sidebar themed-surface">
+    <app-sidebar />
+  </div>
+  <div class="main-content themed-bg">
+    <app-searchbar (onSearch)="handleSearch($event)" />
+    <app-search-filters (onFilterChange)="handleFilterChange($event)" (onSortChange)="handleSortChange($event)" />
+    <app-task-list [tasks]="tasks()" />
+
+    <p>{{nextPage()}}</p>
+    @if (nextPage()) {
+      <button (click)="getMoreTasks()">
+        More
+      </button>
+    }
+  </div>
+</div>

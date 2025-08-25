@@ -1,0 +1,19 @@
+$shadows: (
+  subtle: 0 1px 3px rgba(0, 0, 0, 0.12),
+  medium: 0 4px 6px rgba(0, 0, 0, 0.15),
+  strong: 0 8px 16px rgba(0, 0, 0, 0.2),
+  inset: inset 0 2px 4px rgba(0, 0, 0, 0.06)
+);
+
+// The mixin that accepts a style name.
+// It checks if the style exists in the map and applies the shadow.
+@mixin box-shadow($name) {
+  // Check if the provided name exists in our `$shadows` map.
+  @if map-has-key($shadows, $name) {
+    // If it exists, apply the corresponding shadow.
+    box-shadow: map-get($shadows, $name);
+  } @else {
+    // If the name is not found, throw an error to inform the developer.
+    @error "Shadow with name `#{$name}` not found in the `$shadows` map.";
+  }
+}

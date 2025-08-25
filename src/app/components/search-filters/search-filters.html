@@ -1,0 +1,23 @@
+<div class="filter-and-sorting-wrapper themed-bg">
+    <div class="filters-and-sorting">
+      <div class="filter-container">
+        <span class="filter-label">Filter by:</span>
+        <select class="filter-select" (change)="onFilterChange.emit($event)">
+          <option value="all">All</option>
+          <option value="backlog">Backlog</option>
+          <option value="pending">Pending</option>
+          <option value="in-progress">In Progress</option>
+          <option value="in-review">In Review</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+      <div class="sort-container">
+        <span class="sort-label">Sort by:</span>
+        <select class="sort-select" (change)="onSortChange.emit($event)">
+          <option value="date">Date</option>
+          <option value="priority">Priority</option>
+          <option value="status">Status</option>
+        </select>
+      </div>
+    </div>
+</div>

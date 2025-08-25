@@ -1,0 +1,58 @@
+@import 'shadows';
+@import 'sizes';
+@import 'colors';
+
+
+:host {
+  margin: auto;
+  width: 100%;
+}
+
+.task {
+    max-width: $general-max-width;
+    margin: auto;
+    border-radius: 8px; 
+    padding: 16px;
+    @include box-shadow(subtle);
+    &:hover {
+        cursor: pointer; 
+        @include box-shadow(strong);
+    }
+    .task-header {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        margin-bottom: 12px; 
+        #task-id {
+            font-weight: bold; 
+            color: #757575; 
+        }
+        .task-status {
+            font-weight: bold; 
+            background-color: $neutral-light; 
+            padding: 4px 8px; 
+            border-radius: 4px; 
+            color: $neutral-dark; 
+            &.backlog {
+                background-color: $danger-light; 
+                color: $danger-dark;
+            }
+            &.pending {
+                background-color: $neutral-light; 
+                color: $neutral-dark; 
+            }
+            &.in-progress {
+                background-color: $alert-light; 
+                color: $alert-dark; 
+            }
+            &.in-review {
+                background-color: $success-light; 
+                color: $success-dark; 
+            }
+            &.done {
+                background-color: $neutral-light; 
+                color: $primary; 
+            }
+        }
+    }
+}

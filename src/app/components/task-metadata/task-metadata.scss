@@ -1,0 +1,5 @@
+.task-metadata {
+  display: flex; // Uses flexbox for layout.
+  align-items: center; // Vertically centers the items within the flex container.
+  gap: 8px; // Adds space between the avatar and the text.
+}

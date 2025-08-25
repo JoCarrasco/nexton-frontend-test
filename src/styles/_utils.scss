@@ -1,0 +1,5 @@
+@mixin cursor-pointer {
+    &:hover {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,68 @@
+@import 'colors';
+@import 'shadows';
+@import 'responsive';
+
+.nav-filler {
+    display: flex;
+    height: 44px;
+
+    @include responsive($breakpoint-md) {
+        display: none;
+    }
+}
+
+.responsive-nav {
+    @include box-shadow(subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 100;
+
+    @include responsive($breakpoint-md) {
+        width: 250px;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 20px;
+        @include box-shadow(subtle);
+    }
+
+    .nav-links {
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+
+        li a {
+            color: $neutral-dark;
+            text-decoration: none;
+            padding: 5px;
+            transition: color 0.2s;
+
+            &.active {
+                background-color: $primary;
+                color: $white;
+            }
+
+        }
+
+        @include responsive($breakpoint-md) {
+            flex-direction: column;
+            gap: 0;
+            flex-grow: 1;
+
+            li a {
+                display: block;
+                padding: 15px 20px;
+            }
+        }
+    }
+}

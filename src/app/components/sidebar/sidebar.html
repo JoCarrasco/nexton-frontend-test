@@ -1,0 +1,8 @@
+<div class="nav-filler"></div>
+<nav class="responsive-nav themed-surface">
+    <ul class="nav-links">
+        @for (segment of segments; track $index) {
+            <li><a [class]="'themed-surface-item'" [class.active]="segment.path === currentSegmentPath()" >{{ segment.title }}</a></li>
+        }
+    </ul>
+</nav>
